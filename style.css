@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-left: 5px solid #000;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #000;
+    font-weight: 700;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.schedule-section,
+.input-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-section h2,
+.input-section h2,
+.class-list-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+/* 시간표 그리드 */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 1fr 1fr;
+    gap: 1px;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.time-slot {
+    background-color: #ffffff;
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 0.9em;
+    border: 1px solid #ddd;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.time-slot.header {
+    background-color: #000;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.time-slot.empty {
+    background-color: #ffffff;
+}
+
+.time-slot.occupied {
+    background-color: #f9f9f9;
+}
+
+.schedule-course {
+    background-color: #e8e8e8;
+    border: 1px solid #999;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin: 2px 0;
+}
+
+.time-slot div {
+    margin: 5px 0;
+}
+
+.time-slot .course-name {
+    font-weight: 600;
+    color: #000;
+}
+
+.time-slot .course-room {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.time-slot .course-time {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* 입력 폼 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #000;
+    font-size: 0.95em;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95em;
+    font-family: inherit;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+/* 버튼 */
+.btn-submit,
+.btn-reset {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-reset {
+    background-color: #f0f0f0;
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+.btn-reset:hover {
+    background-color: #e0e0e0;
+}
+
+/* 등록된 강의 목록 */
+.class-list-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.class-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.class-item {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.class-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.class-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.class-item-name {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #000;
+    flex: 1;
+    word-break: break-word;
+}
+
+.btn-delete {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.btn-delete:hover {
+    background-color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.class-item-detail {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.class-item-detail strong {
+    color: #000;
+}
+
+    @media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-grid {
+        grid-template-columns: 70px 1fr 1fr 1fr 1fr;
+        font-size: 0.9em;
+    }
+    
+    .time-slot {
+        padding: 8px;
+        min-height: 40px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .class-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .schedule-section,
+    .input-section,
+    .class-list-section {
+        padding: 15px;
+    }
+    
+    .schedule-grid {
+        grid-template-columns: 60px 45px 1fr;
+    }
+    
+    .time-slot {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+}
